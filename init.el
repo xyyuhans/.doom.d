@@ -52,7 +52,9 @@
        ;;zen               ; distraction-free coding or writing
 
        :editor
-       (evil +everywhere); come to the dark side, we have cookies
+       ;; disable vim
+       ;; https://discourse.doomemacs.org/t/how-to-disable-evil-vim-emulation/63
+       ;;(evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
