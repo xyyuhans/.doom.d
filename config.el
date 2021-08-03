@@ -55,3 +55,17 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package! org-roam
+  :custom
+  (org-roam-directory (file-truename "~/Syncthing/backup/orgroam")))
+
+;; org mode key binding
+;; https://github.com/hlissner/doom-emacs/issues/3306
+(map!
+  :after org
+  :map org-mode-map
+  :gi "C-RET"      #'org-insert-heading-respect-content
+  :gi [C-return]   #'org-insert-heading-respect-content
+  (:when IS-MAC
+   :gi [s-return]   #'org-insert-heading-respect-content))
