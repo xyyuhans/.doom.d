@@ -107,3 +107,12 @@
   ;; https://github.com/weirdNox/org-noter/issues/80
   ;; location saved in org file, open from org file works, open from pdf doesn't work
   (org-noter-auto-save-last-location 1))
+
+(use-package! nov
+  :custom
+  ;; copy text without truncate
+  (nov-text-width t)
+  :config
+  ;; open epub in this mode
+  ;; https://depp.brause.cc/nov.el/
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))

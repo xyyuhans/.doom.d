@@ -56,3 +56,5 @@
 (package! cnfonts)
 
 (package! org-wild-notifier)
+
+(package! nov)
