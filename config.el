@@ -88,3 +88,11 @@
 (use-package! cnfonts
   :config
   (cnfonts-enable))
+
+(use-package! org-wild-notifier
+  :custom
+  (org-wild-notifier-alert-time '(0))
+  (org-wild-notifier-keyword-whitelist nil)
+  :config
+  (org-wild-notifier-mode)
+  (setq alert-default-style 'libnotify))
