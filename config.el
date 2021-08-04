@@ -96,3 +96,7 @@
   :config
   (org-wild-notifier-mode)
   (setq alert-default-style 'libnotify))
+
+(use-package! ox-hugo
+  :custom
+  (org-hugo-section "post"))
