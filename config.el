@@ -100,3 +100,10 @@
 (use-package! ox-hugo
   :custom
   (org-hugo-section "post"))
+
+(use-package! org-noter
+  :custom
+  (org-noter-doc-split-fraction '(0.65 . 0.5))
+  ;; https://github.com/weirdNox/org-noter/issues/80
+  ;; location saved in org file, open from org file works, open from pdf doesn't work
+  (org-noter-auto-save-last-location 1))
