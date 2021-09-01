@@ -60,6 +60,7 @@
   :custom
   (org-roam-directory (file-truename "~/Syncthing/backup/orgroam")))
 
+;; org mode
 ;; org mode key binding
 ;; https://github.com/hlissner/doom-emacs/issues/3306
 (map!
@@ -103,10 +104,8 @@
 
 (use-package! org-noter
   :custom
-  (org-noter-doc-split-fraction '(0.65 . 0.5))
-  ;; https://github.com/weirdNox/org-noter/issues/80
-  ;; location saved in org file, open from org file works, open from pdf doesn't work
-  (org-noter-auto-save-last-location 1))
+  (org-noter-doc-split-fraction '(0.65 . 0.5)))
+
 
 (use-package! nov
   :custom
@@ -127,3 +126,7 @@
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
   (deft-directory org-roam-directory))
+
+;; disable exit promet
+;; https://github.com/hlissner/doom-emacs/issues/2688
+(setq confirm-kill-emacs nil)
