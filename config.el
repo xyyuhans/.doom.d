@@ -130,3 +130,7 @@
 ;; disable exit promet
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setq confirm-kill-emacs nil)
+
+(use-package! pdf-tools
+  :config
+  (setq-default pdf-view-display-size 'fit-width))
