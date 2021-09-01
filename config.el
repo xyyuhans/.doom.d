@@ -120,3 +120,10 @@
 (use-package! org-download
   :config
   (add-hook 'dired-mode-hook 'org-download-enable))
+
+(use-package! deft
+  :custom
+  (deft-recursive t)
+  (deft-use-filter-string-for-filename t)
+  (deft-default-extension "org")
+  (deft-directory org-roam-directory))
