@@ -58,3 +58,5 @@
 (package! org-wild-notifier)
 
 (package! nov)
+
+(package! org-download)

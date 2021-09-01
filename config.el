@@ -116,3 +116,7 @@
   ;; open epub in this mode
   ;; https://depp.brause.cc/nov.el/
   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
+(use-package! org-download
+  :config
+  (add-hook 'dired-mode-hook 'org-download-enable))
