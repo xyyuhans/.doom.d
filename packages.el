@@ -67,3 +67,5 @@
 
 (package! poly-R)
 (package! ess)
+
+(package! transpose-frame)
