@@ -143,3 +143,7 @@
 ;; auto save mode
 (auto-save-visited-mode)
 (setq auto-save-visited-interval 60)
+
+(use-package! org-anki
+  :config
+  (customize-set-variable 'org-anki-default-deck "my-target-deck"))
