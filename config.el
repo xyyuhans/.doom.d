@@ -139,3 +139,7 @@
 
 ;; auto revert
 (global-auto-revert-mode t)
+
+;; auto save mode
+(auto-save-visited-mode)
+(setq auto-save-visited-interval 60)
