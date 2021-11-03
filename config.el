@@ -136,3 +136,6 @@
 (use-package! pdf-tools
   :config
   (setq-default pdf-view-display-size 'fit-width))
+
+;; auto revert
+(global-auto-revert-mode t)
