@@ -64,3 +64,6 @@
 (package! org-anki)
 ;; https://github.com/eyeinsky/org-anki/issues/22
 (package! promise)
+
+(package! poly-R)
+(package! ess)
