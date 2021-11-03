@@ -104,7 +104,9 @@
 
 (use-package! org-noter
   :custom
-  (org-noter-doc-split-fraction '(0.65 . 0.5)))
+  (org-noter-doc-split-fraction '(0.65 . 0.5))
+  :config
+  (setq-default org-noter-separate-notes-from-heading nil))
 
 
 (use-package! nov
