@@ -69,3 +69,5 @@
 (package! ess)
 
 (package! transpose-frame)
+
+(package! org2issue)

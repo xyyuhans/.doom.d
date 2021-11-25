@@ -156,3 +156,8 @@
   :config
   (setq org-journal-dir "~/Syncthing/backup/orgjournal")
   (setq org-journal-time-prefix "** TODO "))
+
+(use-package! org2issue
+  :config
+  (setq org2issue-user "xyyuhans")
+  (setq org2issue-blog-repo "blog"))
