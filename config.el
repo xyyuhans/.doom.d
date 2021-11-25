@@ -151,3 +151,8 @@
 ;; fix python indent
 ;; https://github.com/jorgenschaefer/elpy/issues/761
 (setq-default indent-tabs-mode nil)
+
+(use-package! org-journal
+  :config
+  (setq org-journal-dir "~/Syncthing/backup/orgjournal")
+  (setq org-journal-time-prefix "** TODO "))
