@@ -30,9 +30,9 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Nutstore Files/sync/orgmode/")
-(setq org-default-notes-file "~/Nutstore Files/sync/orgmode/inbox.org")
-(setq org-agenda-files '("~/Nutstore Files/sync/orgmode" "~/Nutstore Files/sync/orgmode/hidden" "~/Syncthing/backup/org"))
-(setq org-archive-location "~/Syncthing/backup/org/archive::")
+(setq org-agenda-files '("~/Nutstore Files/sync/orgmode" "~/Nutstore Files/sync/orgmode/hidden"))
+(setq org-todo-repeat-to-state "LOOP")
+;;(setq org-startup-truncated nil)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
