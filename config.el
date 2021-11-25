@@ -147,3 +147,7 @@
 (use-package! org-anki
   :config
   (customize-set-variable 'org-anki-default-deck "my-target-deck"))
+
+;; fix python indent
+;; https://github.com/jorgenschaefer/elpy/issues/761
+(setq-default indent-tabs-mode nil)
