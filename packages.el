@@ -71,3 +71,5 @@
 (package! transpose-frame)
 
 (package! org2issue)
+
+(package! org-super-agenda)
