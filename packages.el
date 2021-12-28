@@ -50,8 +50,7 @@
 ;(unpin! t)
 
 ;; org roam ui
-(package! websocket)
-(package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
+(package! org-roam)
 
 (package! cnfonts)
 
@@ -73,3 +72,5 @@
 (package! org2issue)
 
 (package! org-super-agenda)
+
+(package! org-gtd)

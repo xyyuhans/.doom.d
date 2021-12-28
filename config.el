@@ -29,7 +29,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Nutstore Files/sync/orgmode/")
+(setq org-directory "/home/xyyuhans/SynologyDrive/documents/orgmode")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -53,9 +53,11 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(use-package! org-roam
-  :custom
-  (org-roam-directory (file-truename "~/Syncthing/backup/orgroam")))
+;; config
+
+;; disable exit promet
+;; https://github.com/hlissner/doom-emacs/issues/2688
+(setq confirm-kill-emacs nil)
 
 ;; org mode
 ;; org mode key binding
@@ -68,20 +70,22 @@
   (:when IS-MAC
    :gi [s-return]   #'org-insert-heading-respect-content))
 
-;; org roam ui
-(use-package! websocket
-    :after org-roam)
-(use-package! org-roam-ui
-    :after org-roam ;; or :after org
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+;; auto revert
+(global-auto-revert-mode t)
+
+;; auto save mode
+(auto-save-visited-mode)
+(setq auto-save-visited-interval 60)
+
+;; fix python indent
+;; https://github.com/jorgenschaefer/elpy/issues/761
+(setq-default indent-tabs-mode nil)
+
+;; package
+
+(use-package! org-roam
+  :custom
+  (org-roam-directory (file-truename "/home/xyyuhans/SynologyDrive/documents/orgroam")))
 
 (use-package! cnfonts
   :config
@@ -95,16 +99,11 @@
   (org-wild-notifier-mode)
   (setq alert-default-style 'libnotify))
 
-(use-package! ox-hugo
-  :custom
-  (org-hugo-section "post"))
-
 (use-package! org-noter
   :custom
   (org-noter-doc-split-fraction '(0.65 . 0.5))
   :config
   (setq-default org-noter-separate-notes-from-heading nil))
-
 
 (use-package! nov
   :custom
@@ -119,45 +118,18 @@
   :config
   (add-hook 'dired-mode-hook 'org-download-enable))
 
-(use-package! deft
-  :custom
-  (deft-recursive t)
-  (deft-use-filter-string-for-filename t)
-  (deft-default-extension "org")
-  (deft-directory org-roam-directory))
-
-;; disable exit promet
-;; https://github.com/hlissner/doom-emacs/issues/2688
-(setq confirm-kill-emacs nil)
-
 (use-package! pdf-tools
   :config
   (setq-default pdf-view-display-size 'fit-width))
 
-;; auto revert
-(global-auto-revert-mode t)
-
-;; auto save mode
-(auto-save-visited-mode)
-(setq auto-save-visited-interval 60)
-
 (use-package! org-anki
   :config
-  (customize-set-variable 'org-anki-default-deck "my-target-deck"))
-
-;; fix python indent
-;; https://github.com/jorgenschaefer/elpy/issues/761
-(setq-default indent-tabs-mode nil)
+  (customize-set-variable 'org-anki-default-deck "new"))
 
 (use-package! org-journal
   :config
-  (setq org-journal-dir "~/Syncthing/backup/orgjournal")
+  (setq org-journal-dir "/home/xyyuhans/SynologyDrive/documents/orgjournal")
   (setq org-journal-time-prefix "** TODO "))
-
-(use-package! org2issue
-  :config
-  (setq org2issue-user "xyyuhans")
-  (setq org2issue-blog-repo "blog"))
 
 (use-package! org-super-agenda
   :config
@@ -188,6 +160,5 @@
   :config
   (setq org-agenda-span 'day)
   (setq org-agenda-start-day nil)
-  (setq org-agenda-files '("~/Nutstore Files/sync/orgmode" "~/Nutstore Files/sync/orgmode/hidden"))
-  (setq org-archive-location "~/Syncthing/backup/org/archive::")
+  (setq org-agenda-files '("/home/xyyuhans/SynologyDrive/documents/orgmode" "/home/xyyuhans/SynologyDrive/documents/orgmode/routine"))
   (setq org-todo-repeat-to-state "LOOP"))
