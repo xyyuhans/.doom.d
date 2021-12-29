@@ -59,37 +59,16 @@
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setq confirm-kill-emacs nil)
 
-;; org mode
-;; org mode key binding
-;; https://github.com/hlissner/doom-emacs/issues/3306
-(map!
-  :after org
-  :map org-mode-map
-  :gi "C-RET"      #'org-insert-heading-respect-content
-  :gi [C-return]   #'org-insert-heading-respect-content
-  (:when IS-MAC
-   :gi [s-return]   #'org-insert-heading-respect-content))
-
 ;; auto revert
 (global-auto-revert-mode t)
 
 ;; auto save mode
-(auto-save-visited-mode)
 (setq auto-save-visited-interval 60)
-
-;; fix python indent
-;; https://github.com/jorgenschaefer/elpy/issues/761
-(setq-default indent-tabs-mode nil)
-
-;; package
-
-(use-package! org-roam
-  :custom
-  (org-roam-directory (file-truename "/home/xyyuhans/SynologyDrive/documents/orgroam")))
+(auto-save-visited-mode)
 
 (use-package! cnfonts
   :config
-  (cnfonts-enable))
+  (cnfonts-mode 1))
 
 (use-package! org-wild-notifier
   :custom
@@ -114,10 +93,6 @@
   ;; https://depp.brause.cc/nov.el/
   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
 
-(use-package! org-download
-  :config
-  (add-hook 'dired-mode-hook 'org-download-enable))
-
 (use-package! pdf-tools
   :config
   (setq-default pdf-view-display-size 'fit-width))
@@ -128,7 +103,6 @@
 
 (use-package! org-journal
   :config
-  (setq org-journal-dir "/home/xyyuhans/SynologyDrive/documents/orgjournal")
   (setq org-journal-time-prefix "** TODO "))
 
 (use-package! org-super-agenda

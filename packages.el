@@ -48,25 +48,16 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-
-;; org roam ui
-(package! org-roam)
-
 (package! cnfonts)
 
 (package! org-wild-notifier)
 
 (package! nov)
 
-(package! org-download)
 
 (package! org-anki)
 ;; https://github.com/eyeinsky/org-anki/issues/22
 (package! promise)
-
-(package! poly-R)
-(package! ess)
-
 (package! transpose-frame)
 
 (package! org2issue)
