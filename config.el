@@ -143,3 +143,14 @@
    ("C-c d s" . org-gtd-show-stuck-projects)
    :map org-gtd-process-map
    ("C-c d f" . org-gtd-choose)))
+
+(use-package! rime
+  :custom
+  (default-input-method "rime")
+  :config
+  (setq rime-user-data-dir "/home/xyyuhans/.local/share/fcitx5/rime")
+  (setq rime-disable-predicates
+      '(rime-predicate-evil-mode-p
+        rime-predicate-after-alphabet-char-p
+        rime-predicate-prog-in-code-p))
+  (setq rime-show-candidate 'posframe))

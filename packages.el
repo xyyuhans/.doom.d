@@ -65,3 +65,6 @@
 (package! org-super-agenda)
 
 (package! org-gtd)
+
+(package! rime)
+(package! posframe)
