@@ -126,3 +126,20 @@
   (setq org-agenda-start-day nil)
   (setq org-agenda-files '("/home/xyyuhans/SynologyDrive/documents/orgmode" "/home/xyyuhans/SynologyDrive/documents/orgmode/calendar"))
   (setq org-todo-repeat-to-state "LOOP"))
+
+(use-package! org-gtd
+  :after org
+  :demand t
+  :custom
+  (org-gtd-directory "/home/xyyuhans/SynologyDrive/documents/orgmode")
+  (org-edna-use-inheritance t)
+  :config
+  (org-edna-mode)
+  :bind
+  (("C-c d c" . org-gtd-capture)
+   ("C-c d e" . org-gtd-engage)
+   ("C-c d p" . org-gtd-process-inbox)
+   ("C-c d n" . org-gtd-show-all-next)
+   ("C-c d s" . org-gtd-show-stuck-projects)
+   :map org-gtd-process-map
+   ("C-c d f" . org-gtd-choose)))
