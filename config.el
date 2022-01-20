@@ -121,9 +121,8 @@
           )))
 
 (use-package! org-agenda
-  :after org
   :config
   (setq org-agenda-span 'day)
   (setq org-agenda-start-day nil)
-  (setq org-agenda-files '("/home/xyyuhans/SynologyDrive/documents/orgmode" "/home/xyyuhans/SynologyDrive/documents/orgmode/routine"))
+  (setq org-agenda-files '("/home/xyyuhans/SynologyDrive/documents/orgmode" "/home/xyyuhans/SynologyDrive/documents/orgmode/calendar"))
   (setq org-todo-repeat-to-state "LOOP"))
