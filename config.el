@@ -108,25 +108,16 @@
 (use-package! org-super-agenda
   :config
   (org-super-agenda-mode)
-  ;; https://github.com/alphapapa/org-super-agenda/issues/204
-  (defun my-org-hour-specification-p (item)
-    (s-matches? "[0-9][0-9]?:[0-9][0-9]" item))
+  ;; https://github.com/alphapapa/org-super-agenda/issues/187
   (setq org-super-agenda-groups
-        '((:name "timeline"  ; Optionally specify section name
-           :time-grid t  ; Items that appear on the time grid
-           :pred my-org-hour-specification-p)
-          (:name "timer"
-           :todo "HOLD"
-           :order 5)
-          (:name "study this week"
-           :category "study"
-           :order 7)
-          (:name "today"
+        `(
+          (:name "本日"
+           :time-grid t
            :scheduled today
-           ;; https://github.com/alphapapa/org-super-agenda/issues/169
-           :deadline (org-read-date nil nil "+1d"))
-          (:auto-category t
-           :order 6)
+           :deadline (before ,(org-read-date nil nil "+2d"))
+           :order 0
+           )
+          (:auto-category t)
           )))
 
 (use-package! org-agenda
